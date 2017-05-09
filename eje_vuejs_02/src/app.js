@@ -4,7 +4,8 @@
     new Vue({
         el: '#app',
         data: {
-            name: 'Er Compa!'
+            name: '',
+            gender: 'm'
         }
     })
 })();

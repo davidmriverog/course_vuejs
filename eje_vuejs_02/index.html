@@ -22,7 +22,35 @@
   <body>
     <div class="container" id="app">
       
-      <h1 v-if="name">Bienvenido(a) {{ name }}!</h1> <br>
+      <div v-show="name" class="row">
+        <h1 class="col-xs-12"> {{ gender === 'm' ? 'Bienvenido' : 'Bienvenida' }}, {{ name }}!</h1> <br>
+        <p class="col-xs-12">Espero que disfrute tu visita, usamos v-show</p>
+      </div>
+
+      <template v-if="name">
+        <div class="row">
+          <h1 class="col-xs-12">{{ gender === 'm' ? 'Bienvenido' : 'Bienvenida' }}, {{ name }}!</h1> <br>
+          <p class="col-xs-12">Espero que disfrute tu visita, usamos v-if</p>
+          <p class="col-xs-12">Tu Nombre al revés {{ name.split('').reverse().join('') }}</p>
+        </div>
+      </template>
+
+      <div class="row" v-else>
+        <div class="col-xs-12">
+          <div class="alert alert-warning" role="alert">
+            Escribe por favor tu nombre!
+          </div>
+        </div>
+      </div>
+
+      <div class="row" v-if="name.length <= 2">
+        <div class="col-xs-12">
+          <div class="alert alert-danger" role="alert">
+            Nombre no válido
+          </div>
+        </div>
+      </div>
+      
 
       <form class="form-horizontal">
         <div class="form-group">
@@ -32,10 +60,6 @@
           </div>
         </div>
       </form>
-
-      <p class="well text-justify">
-        {{ $data | json }}
-      </p>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
