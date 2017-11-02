@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import JQuery from 'jquery'
 
 Vue.config.productionTip = false
 
@@ -12,4 +13,10 @@ new Vue({
   router,
   template: '<App/>',
   components: { App }
+})
+
+Vue.use({
+  install: function (Vue, options) {
+    Vue.prototype.$jQuery = JQuery
+  }
 })

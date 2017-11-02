@@ -1,13 +1,17 @@
 // https://eslint.org/docs/user-guide/configuring
 
 module.exports = {
+  globals: {
+    "$": true,
+    "jQuery": true
+  },
   root: true,
   parser: 'babel-eslint',
   parserOptions: {
     sourceType: 'module'
   },
   env: {
-    browser: true,
+    browser: true
   },
   // https://github.com/standard/standard/blob/master/docs/RULES-en.md
   extends: 'standard',
