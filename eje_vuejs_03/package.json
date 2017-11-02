@@ -1,0 +1,16 @@
+{
+  "name": "eje_vuejs_03",
+  "version": "1.0.0",
+  "description": "Curso de VueJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Rivero",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.17.0",
+    "lodash": "^4.17.4",
+    "vue": "^2.5.2"
+  }
+}
